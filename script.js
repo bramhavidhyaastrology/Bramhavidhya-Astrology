@@ -1,5 +1,5 @@
 /* ============================================================
-   Bramhavidhya Astrology - Main Script
+   Bhramavidhya Astrology — Main Script
    ============================================================ */
 
 /* ---------- 1. DOSHA CARDS DATA (multi-language) ---------- */
@@ -65,7 +65,7 @@ const translations = {
   en: {
     nav_about: "About",
     nav_contact: "Contact",
-    hero_title: "Bramhavidhya Astrology",
+    hero_title: "Bhramavidhya Astrology",
     hero_sub: "Bramha Sri Vinu Shankar",
     hero_tag: "Sri VanaDurga Upasakan",
     call_now: "Call Now",
@@ -153,7 +153,6 @@ function renderDoshaCards(lang){
       </div>
     `;
     doshaGrid.appendChild(card);
-    // stagger scroll reveal
     setTimeout(() => card.classList.add("show"), 80 * i);
   });
 }
@@ -200,7 +199,7 @@ document.addEventListener("click", () => {
 
 /* ---------- 6. CONTACT FORM → WHATSAPP ---------- */
 const form = document.getElementById("contactForm");
-const WA_NUMBER = "917592857909"; // astrologer WhatsApp
+const WA_NUMBER = "917592857909";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -227,7 +226,7 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 
-/* ---------- 7. SCROLL REVEAL FOR CARDS (fallback) ---------- */
+/* ---------- 7. SCROLL REVEAL FALLBACK ---------- */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add("show");
@@ -243,7 +242,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("bv_lang") || "en";
   langLabel.textContent = langNames[savedLang];
   applyLanguage(savedLang);
-
-  // Re-observe after render
   setTimeout(observeCards, 200);
 });
